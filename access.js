@@ -15,11 +15,15 @@
     window.addEventListener('load', function () {
         var creditText = document.getElementById('kix-smart-summary-view-header');
         creditText.innerText = "Docs+ by Alek";
-
-
     })
 
     var dismissTime = "NO CLASS";
+
+    var link = document.createElement('link');
+    link.setAttribute('rel', 'stylesheet');
+    link.setAttribute('type', 'text/css');
+    link.setAttribute('href', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css');
+    document.head.appendChild(link);
 
     var appendTimeToElement = document.getElementById('office-editing-file-extension');
     var timeLabel = document.createElement("div");
@@ -34,6 +38,7 @@
     periodLabel.style = "position: relative;display: -moz-inline-box;display: inline-block;border: 1px solid #4285f4;border-radius: 100px;padding-inline: 10px;font-size: 15px;bottom: 2px; margin-left: 5px";
     document.body.appendChild(periodLabel);
     appendTimeToElement.parentNode.insertBefore(periodLabel, appendTimeToElement);
+    var clockICO = '<i class="bi bi-clock"></i>'
 
     function updateTime() {
         var currentTime = new Date();
@@ -149,7 +154,7 @@
         clockDiv.innerText = hours + ":" + minutes + ":" + seconds;
 
         var periodDiv = document.getElementById('periodAIO');
-        periodDiv.innerText = dismissTime;
+        periodDiv.innerText = clockICO + dismissTime;
     }
 
     setInterval(updateTime, 1000);
