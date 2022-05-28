@@ -7,6 +7,7 @@
 // @match        https://docs.google.com/document/d/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
+// @require      https://code.jquery.com/jquery-3.6.0.min.js
 // ==/UserScript==
 
 (function() {
@@ -18,12 +19,17 @@
     })
 
     var dismissTime = "NO CLASS";
+    var weatherState = "UNFETCHED"
+
+
 
     var link = document.createElement('link');
     link.setAttribute('rel', 'stylesheet');
     link.setAttribute('type', 'text/css');
     link.setAttribute('href', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css');
     document.head.appendChild(link);
+
+
 
     var appendTimeToElement = document.getElementById('office-editing-file-extension');
     var timeLabel = document.createElement("div");
@@ -32,13 +38,40 @@
     document.body.appendChild(timeLabel);
     appendTimeToElement.parentNode.insertBefore(timeLabel, appendTimeToElement);
 
+
     var appendPeriodToElement = document.getElementById('office-editing-file-extension');
     var periodLabel = document.createElement("div");
     periodLabel.id = "periodAIO";
     periodLabel.style = "position: relative;display: -moz-inline-box;display: inline-block;border: 1px solid #4285f4;border-radius: 100px;padding-inline: 10px;font-size: 15px;bottom: 2px; margin-left: 5px";
     document.body.appendChild(periodLabel);
     appendTimeToElement.parentNode.insertBefore(periodLabel, appendTimeToElement);
-    var clockICO = '<i class="bi bi-clock"></i>'
+
+    var appendWeatherToElement = document.getElementById('office-editing-file-extension');
+    var weatherLabel = document.createElement("div");
+    weatherLabel.id = "weatherAIO";
+    weatherLabel.style = "position: relative;display: -moz-inline-box;display: inline-block;border: 1px solid #4285f4;border-radius: 100px;padding-inline: 10px;font-size: 15px;bottom: 2px; margin-left: 5px;padding-top: 1px;padding-bottom: 1px;";
+    appendTimeToElement.parentNode.insertBefore(weatherLabel, appendWeatherToElement);
+
+    var creditText = document.getElementById('weatherAIO');
+    var iconLocation = document.createElement('i')
+    // iconLocation.className = "bi bi-cursor-fill"
+    $.getJSON('https://api.openweathermap.org/data/2.5/weather?lat=34.038563917642705&lon=-118.46091735089752&appid=356c0e149219f8d18d30e05f4e1a130f', function(response){
+        weatherState = response.weather[0].main
+        console.log("[RDX] CURRENT WEATHER: "+ weatherState)
+
+        if(weatherState == "Clear") {
+            iconLocation.className = "bi bi-sun"
+        }
+        else if(weatherState == "Clouds") {
+            iconLocation.className = "bi bi-cloud"
+        }
+        else if(weatherState == "Rain") {
+            iconLocation.className = "bi bi-cloud-drizzle"
+        }
+    });
+
+    creditText.appendChild(iconLocation)
+
 
     function updateTime() {
         var currentTime = new Date();
@@ -154,10 +187,9 @@
         clockDiv.innerText = hours + ":" + minutes + ":" + seconds;
 
         var periodDiv = document.getElementById('periodAIO');
-        periodDiv.innerText = clockICO + dismissTime;
+        periodDiv.innerText = dismissTime;
     }
 
     setInterval(updateTime, 1000);
 
 })();
-
