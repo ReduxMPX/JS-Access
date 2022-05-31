@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  try to take over the world!
 // @author       You
-// @match        https://docs.google.com/document/d/*
+// @match        https://docs.google.com/presentation/d/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
 // @require      https://code.jquery.com/jquery-3.6.0.min.js
@@ -67,6 +67,9 @@
         }
         else if(weatherState == "Rain") {
             iconLocation.className = "bi bi-cloud-drizzle"
+        }
+        else if(weatherState == "Haze") {
+            iconLocation.className = "bi bi-cloud-haze2"
         }
     });
 
