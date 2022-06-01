@@ -5,6 +5,8 @@
 // @description  try to take over the world!
 // @author       You
 // @match        https://docs.google.com/presentation/d/*
+// @match        https://docs.google.com/document/d/*
+// @match        https://classroom.google.com/h
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
 // @require      https://code.jquery.com/jquery-3.6.0.min.js
@@ -16,8 +18,32 @@
     window.addEventListener('load', function () {
         var creditText = document.getElementById('kix-smart-summary-view-header');
         creditText.innerText = "Docs+ by Alek";
+
     })
 
+
+    if (window.location.href.indexOf("document") > -1) {
+        console.log("[RDX] Detected on Google Docs")
+    }
+    else if (window.location.href.indexOf("presentation") > -1) {
+        console.log("[RDX] Detected on Google Slides")
+    }
+    else if (window.location.href.indexOf("classroom") > -1) {
+        console.log("[RDX] Detected on Google Classroom")
+    }
+
+
+
+
+
+
+
+
+
+
+    // GOOGLE DOCS WEATHER + TIME SYSTEM ACTIVATES BELOW
+
+    if(window.location.href.indexOf("docs.google.com") >-1) {
     var dismissTime = "NO CLASS";
     var weatherState = "UNFETCHED"
 
@@ -194,5 +220,5 @@
     }
 
     setInterval(updateTime, 1000);
-
+    }
 })();
