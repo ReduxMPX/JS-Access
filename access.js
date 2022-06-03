@@ -21,12 +21,38 @@
 
     })
 
+        var toastjs = document.createElement('script');
+        toastjs.setAttribute('src', 'https://unpkg.com/toastedjs/dist/toasted.min.js');
+        document.head.appendChild(toastjs);
+
+        var toastcss = document.createElement('link');
+        toastcss.setAttribute('rel', 'stylesheet');
+        toastcss.setAttribute('type', 'text/css');
+        toastcss.setAttribute('href', 'https://unpkg.com/toastedjs/dist/toasted.min.css');
+        document.head.appendChild(toastcss);
+
+
 
     if (window.location.href.indexOf("document") > -1) {
         console.log("[RDX] Detected on Google Docs")
+        var link = document.createElement('link');
+        link.setAttribute('rel', 'stylesheet');
+        link.setAttribute('type', 'text/css');
+        link.setAttribute('href', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css');
+        document.head.appendChild(link);
+
     }
     else if (window.location.href.indexOf("presentation") > -1) {
         console.log("[RDX] Detected on Google Slides")
+
+        var link = document.createElement('link');
+        link.setAttribute('rel', 'stylesheet');
+        link.setAttribute('type', 'text/css');
+        link.setAttribute('href', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css');
+        document.head.appendChild(link);
+
+
+
     }
     else if (window.location.href.indexOf("classroom") > -1) {
         console.log("[RDX] Detected on Google Classroom")
@@ -34,7 +60,15 @@
         var DismissTime = "NO CLASS";
         var WeatherState = "UNFETCHED"
 
+        var toastjs = document.createElement('script');
+        toastjs.setAttribute('src', 'https://unpkg.com/toastedjs/dist/toasted.min.js');
+        document.head.appendChild(toastjs);
 
+        var toastcss = document.createElement('link');
+        toastcss.setAttribute('rel', 'stylesheet');
+        toastcss.setAttribute('type', 'text/css');
+        toastcss.setAttribute('href', 'https://unpkg.com/toastedjs/dist/toasted.min.css');
+        document.head.appendChild(toastcss);
 
         var link = document.createElement('link');
         link.setAttribute('rel', 'stylesheet');
@@ -207,7 +241,19 @@
         }
 
         setInterval(updateTime, 1000);
+        setTimeout(() => {
+        let periodLeftToast = new Toasted({
+            position : 'top-center',
+            theme : 'venice',
+            duration : '1500', //TEMPORARY FOR SOLENET NOTIFICATION REDESIGN - CORRECT RELEASE VALUE WAS 1500
+            fullWidth : "true",
+        })
 
+        document.getElementById('periodAIO').onclick = function () {
+            periodLeftToast.show("This is when the current period will end");
+            console.log("Period tip")
+        }
+        }, 1000)
     }
 
 
@@ -398,5 +444,21 @@
         }
 
         setInterval(updateTime, 1000);
+
+        setTimeout(() => {
+        let periodLeftToast = new Toasted({
+            position : 'top-center',
+            theme : 'venice',
+            duration : '1500', //TEMPORARY FOR SOLENET NOTIFICATION REDESIGN - CORRECT RELEASE VALUE WAS 1500
+            fullWidth : "true",
+        })
+
+        document.getElementById('periodAIO').onclick = function () {
+            periodLeftToast.show("This is when the current period will end");
+            console.log("Period tip")
+        }
+        }, 1000)
     }
+
+
 })();
