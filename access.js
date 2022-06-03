@@ -153,27 +153,27 @@
                 var currentTime = now.getHours() * 60 + now.getMinutes(); // Minutes since Midnight
 
                 if (currentTime > P1_START && currentTime < P1_END) {
-                    console.log("In period 1")
+//                    console.log("In period 1")
                     dismissTime = "8:32"
                 }
                 if (currentTime > P2_START && currentTime < P2_END) {
-                    console.log("In period 2")
+//                    console.log("In period 2")
                     dismissTime = "9:37"
                 }
                 if (currentTime > P3_START && currentTime < P3_END) {
-                    console.log("In period 3")
+//                    console.log("In period 3")
                     dismissTime = "10:57"
                 }
                 if (currentTime > P4_START && currentTime < P4_END) {
-                    console.log("In period 4")
+//                    console.log("In period 4")
                     dismissTime = "12:02"
                 }
                 if (currentTime > P5_START && currentTime < P5_END) {
-                    console.log("In period 5")
+//                    console.log("In period 5")
                     dismissTime = "1:37"
                 }
                 if (currentTime > P6_START && currentTime < P6_END) {
-                    console.log("In period 6")
+//                    console.log("In period 6")
                     dismissTime = "2:42"
                 }
             }
@@ -204,31 +204,31 @@
                 var currentTime = now.getHours() * 60 + now.getMinutes(); // Minutes since Midnight
 
                 if (currentTime > P1_START && currentTime < P1_END) {
-                    console.log("In period 1")
+//                    console.log("In period 1")
                     dismissTime = "8:27"
                 }
                 if (currentTime > P2_START && currentTime < P2_END) {
-                    console.log("In period 2")
+//                    console.log("In period 2")
                     dismissTime = "9:27"
                 }
                 if (currentTime > ADV_START && currentTime < ADV_END) {
-                    console.log("In Advisory")
+//                    console.log("In Advisory")
                     dismissTime = "ADVISORY"
                 }
                 if (currentTime > P3_START && currentTime < P3_END) {
-                    console.log("In period 3")
+//                    console.log("In period 3")
                     dismissTime = "11:12"
                 }
                 if (currentTime > P4_START && currentTime < P4_END) {
-                    console.log("In period 4")
+//                    console.log("In period 4")
                     dismissTime = "12:12"
                 }
                 if (currentTime > P5_START && currentTime < P5_END) {
-                    console.log("In period 5")
+//                    console.log("In period 5")
                     dismissTime = "1:40"
                 }
                 if (currentTime > P6_START && currentTime < P6_END) {
-                    console.log("In period 6")
+//                    console.log("In period 6")
                     dismissTime = "2:42"
                 }
             }
@@ -356,27 +356,27 @@
                 var currentTime = now.getHours() * 60 + now.getMinutes(); // Minutes since Midnight
 
                 if (currentTime > P1_START && currentTime < P1_END) {
-                    console.log("In period 1")
+//                    console.log("In period 1")
                     dismissTime = "8:32"
                 }
                 if (currentTime > P2_START && currentTime < P2_END) {
-                    console.log("In period 2")
+//                    console.log("In period 2")
                     dismissTime = "9:37"
                 }
                 if (currentTime > P3_START && currentTime < P3_END) {
-                    console.log("In period 3")
+//                    console.log("In period 3")
                     dismissTime = "10:57"
                 }
                 if (currentTime > P4_START && currentTime < P4_END) {
-                    console.log("In period 4")
+//                    console.log("In period 4")
                     dismissTime = "12:02"
                 }
                 if (currentTime > P5_START && currentTime < P5_END) {
-                    console.log("In period 5")
+//                    console.log("In period 5")
                     dismissTime = "1:37"
                 }
                 if (currentTime > P6_START && currentTime < P6_END) {
-                    console.log("In period 6")
+//                    console.log("In period 6")
                     dismissTime = "2:42"
                 }
             }
@@ -407,31 +407,31 @@
                 var currentTime = now.getHours() * 60 + now.getMinutes(); // Minutes since Midnight
 
                 if (currentTime > P1_START && currentTime < P1_END) {
-                    console.log("In period 1")
+//                    console.log("In period 1")
                     dismissTime = "8:27"
                 }
                 if (currentTime > P2_START && currentTime < P2_END) {
-                    console.log("In period 2")
+//                    console.log("In period 2")
                     dismissTime = "9:27"
                 }
                 if (currentTime > ADV_START && currentTime < ADV_END) {
-                    console.log("In Advisory")
+//                    console.log("In Advisory")
                     dismissTime = "ADVISORY"
                 }
                 if (currentTime > P3_START && currentTime < P3_END) {
-                    console.log("In period 3")
+//                    console.log("In period 3")
                     dismissTime = "11:12"
                 }
                 if (currentTime > P4_START && currentTime < P4_END) {
-                    console.log("In period 4")
+//                    console.log("In period 4")
                     dismissTime = "12:12"
                 }
                 if (currentTime > P5_START && currentTime < P5_END) {
-                    console.log("In period 5")
+//                    console.log("In period 5")
                     dismissTime = "1:40"
                 }
                 if (currentTime > P6_START && currentTime < P6_END) {
-                    console.log("In period 6")
+//                    console.log("In period 6")
                     dismissTime = "2:42"
                 }
             }
