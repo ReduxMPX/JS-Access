@@ -253,7 +253,7 @@
             periodLeftToast.show("This is when the current period will end");
             console.log("Period tip")
         }
-        }, 1000)
+        }, 10000)
     }
 
 
@@ -446,6 +446,22 @@
         setInterval(updateTime, 1000);
 
         setTimeout(() => {
+        function convertMS(ms) {
+            var seconds = Math.floor(ms / 60000);
+            return seconds;
+        }
+
+        var start = new Date();
+
+        function checkTime() {
+            var now = new Date();
+            var elapsedTime = now.getTime() - start.getTime();
+            console.log(convertMS(elapsedTime));
+            return(convertMS(elapsedTime));
+        }
+
+        setInterval(checkTime, 1000);
+
         let periodLeftToast = new Toasted({
             position : 'top-center',
             theme : 'venice',
@@ -457,7 +473,12 @@
             periodLeftToast.show("This is when the current period will end");
             console.log("Period tip")
         }
-        }, 1000)
+
+        document.getElementById('timeAIO').onclick = function () {
+            periodLeftToast.show("You've been working for " + checkTime() + " minutes");
+            console.log("Period tip")
+        }
+        }, 10000)
     }
 
 
