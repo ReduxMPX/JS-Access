@@ -482,4 +482,19 @@
     }
 
 
+   setTimeout(() => {
+
+        let weatherToast = new Toasted({
+            position : 'top-center',
+            theme : 'venice',
+            duration : '2500', //TEMPORARY FOR SOLENET NOTIFICATION REDESIGN - CORRECT RELEASE VALUE WAS 2500
+            fullWidth : "true",
+        })
+
+        document.getElementById('weatherAIO').onclick = function () {
+            weatherToast.show("The weather is " + weatherState + " in Brentwood, CA");
+            console.log("Weather tip")
+        }
+        }, 15000)
+
 })();
