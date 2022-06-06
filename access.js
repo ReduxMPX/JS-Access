@@ -7,6 +7,8 @@
 // @match        https://docs.google.com/presentation/d/*
 // @match        https://docs.google.com/document/d/*
 // @match        https://classroom.google.com/*
+// @match        https://docs.google.com/forms/d/e/*
+// @match        https://docs.google.com/forms/u/0/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
 // @require      https://code.jquery.com/jquery-3.6.0.min.js
@@ -16,6 +18,8 @@
     'use strict';
 
     window.addEventListener('load', function () {
+
+
         var creditText = document.getElementById('kix-smart-summary-view-header');
         creditText.innerText = "Docs+ by Alek";
 
@@ -259,7 +263,25 @@
 
 
 
+    if (window.location.href.indexOf("forms") > -1) {
+        console.log("[RDX] Detected on Google Forms")
 
+            var appendProgress = document.getElementsByClassName('Uc2NEf');
+            var progressBar = document.createElement("div");
+            progressBar.id = "scroll-progress";
+            document.body.insertBefore(progressBar, document.body.firstChild);
+
+            const scrollProgress = document.getElementById('scroll-progress');
+            const height =
+            document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+            window.addEventListener('scroll', () => {
+            const scrollTop =
+                document.body.scrollTop || document.documentElement.scrollTop;
+            scrollProgress.style.width = `${(scrollTop / height) * 100}%`;
+            });
+
+    }
 
 
 
@@ -496,5 +518,8 @@
             console.log("Weather tip")
         }
         }, 15000)
+
+
+
 
 })();
