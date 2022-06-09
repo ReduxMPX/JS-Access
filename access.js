@@ -14,7 +14,32 @@
 // @require      https://code.jquery.com/jquery-3.6.0.min.js
 // ==/UserScript==
 
+
 (function () {
+    
+    
+/*
+KEYDOWN MENU CODE TEMP
+
+document.addEventListener("keyup", function(event) {
+    if (event.keyCode === 18) {
+        event.preventDefault();
+        var testvar = document.getElementById("periodAIO")
+        testvar.style.display = "unset";
+    }
+});
+
+
+document.addEventListener("keydown", function(event) {
+    if (event.keyCode === 18) {
+        event.preventDefault();
+        var testvar = document.getElementById("periodAIO")
+        testvar.style.display = "none";
+    }
+});
+
+*/
+    
     'use strict';
 
     window.addEventListener('load', function () {
